@@ -123,6 +123,25 @@ function reverse(s, start, end) {
     }
 }
 
+/**
+ * @function {public static} reverseWordsIII
+ *
+ * Reverses words of a given `String` (alternative implementation).
+ *
+ * @param {String} str - the `String` to reverse.
+ *
+ * @return the transformed `String`.
+ */
+function reverseWordsIII(str) {
+ var n=str.split(" ");
+ var len = n.length;
+ var result = [];
+ for(var i = len-1,word; word = n[i--];) {
+  result.push(word);
+ }
+ return result.join(' ');
+}
+
 /*____________________________________________________________________________*/
 
 console.log(
@@ -137,8 +156,15 @@ console.log(
     )
 );
 
+console.log(
+    reverseWordsIII(
+        'Powerful you have become, Dooku. The dark side I sense in you.'
+    )
+);
+
 /*
 Output: ($ /usr/bin/node 003.js)
+you. in sense I side dark The Dooku. become, have you Powerful
 you. in sense I side dark The Dooku. become, have you Powerful
 you. in sense I side dark The Dooku. become, have you Powerful
 */
